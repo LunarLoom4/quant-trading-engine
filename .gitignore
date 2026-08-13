@@ -1,0 +1,39 @@
+# Not to be commited (secrets and keys)
+.env
+*.env
+
+# Python cache (auto-generated, not code)
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Logs
+logs/
+*.log
+*.log.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Data and outputs too large for Git or not needed for GitHub
+*.pdf
+*.png
+*.csv
+*.parquet
+*.h5
+
+# Docker volumes (auto-generated)
+postgres-data/
+redis-data/

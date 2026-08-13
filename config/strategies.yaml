@@ -1,0 +1,60 @@
+# --------------------------------------------------------------
+# strategies.yaml -- Per-strategy params + capital allocation
+# allocation_weight: Fraction of portfolio capital allocated.
+#                    Must sum to <= 1.0  (Remainder stays as cash buffer).
+# enabled: Flip to 'false' to disable without removing the block.
+# --------------------------------------------------------------
+
+momentum:
+  enabled: true
+  allocation_weight: 0.0365       # Calculated by Weight Optimization Step
+  symbols:
+  - BTC/USDT
+  - ETH/USDT
+  - SOL/USDT
+  fast_ema: 10                    # Optimized (from 12)
+  slow_ema: 28                    # Optimized (from 26)
+  rsi_period: 12                  # Optimized (from 14)
+  rsi_overbought: 70
+  rsi_oversold: 30
+  atr_period: 14
+  risk_per_trade_pct: 0.01
+
+mean_reversion:
+  enabled: false
+  allocation_weight: 0.0          # Calculated by Weight Optimization Step
+  symbols:
+  - BTC/USDT
+  - ETH/USDT
+  - BNB/USDT
+  bb_period: 25                   # Optimized (from 20)
+  bb_std: 1.5                     # Optimized (from 2.0)
+  zscore_entry: 2.0
+  zscore_exit: 0.5
+  atr_period: 14
+  risk_per_trade_pct: 0.01
+
+breakout:
+  enabled: true
+  allocation_weight: 0.9307       # Calculated by Weight Optimization Step
+  symbols:
+  - BTC/USDT
+  - ETH/USDT
+  - SOL/USDT
+  - ADA/USDT
+  donchian_period: 17             # Optimized (from 20)
+  atr_period: 14
+  volume_multiplier: 1.6          # Optimized (from 1.5)
+  risk_per_trade_pct: 0.01
+
+trend_following:
+  enabled: true
+  allocation_weight: 0.0328       # Calculated by Weight Optimization Step
+  symbols:
+  - BTC/USDT
+  - ETH/USDT
+  adx_period: 14
+  adx_threshold: 20               # Optimized (from 25)
+  supertrend_period: 10
+  supertrend_multiplier: 2.0      # Optimized (from 3.0)
+  risk_per_trade_pct: 0.015
